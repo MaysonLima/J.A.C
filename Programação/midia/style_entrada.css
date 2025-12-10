@@ -1,3 +1,137 @@
-body { background-color: rgb(226, 226, 198);
+/* --- ESTILO GERAL E FONTES --- */
+body {
+    /* Cor de fundo ligeiramente bege para simular papel antigo/tela terminal */
+    background-color: #f7f3e8;
+    color: #111; /* Preto forte para texto */
+    font-family: 'Times New Roman', Times, serif; /* Fonte serifada para o corpo principal */
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
 
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex; /* Para colocar o alerta lateral (sidebar) */
+}
+
+/* --- CABEÇALHO SUPERIOR (IMPRESSÃO DE SEGURANÇA) --- */
+.header-topo {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 40px;
+    border-bottom: 5px solid #cc0000; /* Linha vermelha de "Alto Risco" */
+    margin-bottom: 40px;
+}
+
+.header-topo h1 {
+    font-family: 'Courier New', Courier, monospace; /* Fonte de terminal para o cabeçalho */
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+}
+
+.header-topo p {
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 0;
+}
+
+/* --- SIDEBAR DE ALERTA --- */
+.sidebar-alerta {
+    width: 200px;
+    flex-shrink: 0;
+    margin-right: 30px;
+    padding: 15px;
+    border: 3px solid #cc0000; /* Borda vermelha de alerta */
+    background-color: #ffe0e0; /* Fundo levemente vermelho */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.sidebar-alerta p:first-child {
+    font-size: 1.1em;
+    color: #cc0000;
+    margin-bottom: 5px;
+}
+
+/* --- ÁREA DO DOCUMENTO PRINCIPAL --- */
+.documento-scp {
+    flex-grow: 1;
+    padding: 20px 40px;
+    /* Borda sutil para dar a sensação de um bloco de texto */
+    border-left: 1px dashed #999; 
+}
+
+/* Título de Classificação do Objeto */
+.classificacao-cabecalho {
+    background-color: #111;
+    color: #fff;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+/* Seção Item # e Nome */
+.item-cabecalho {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+.item-cabecalho h3 {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+/* Títulos de Seção */
+.documento-scp h4 {
+    color: #cc0000; /* Títulos de sub-seção em vermelho */
+    text-transform: uppercase;
+    border-bottom: 1px dotted #cc0000;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Bloco de Código/Procedimentos (simulando terminal/datilografia) */
+pre {
+    background-color: #eee;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap; /* Garante que o texto quebre a linha */
+}
+
+/* Linha Divisória Vermelha */
+.linha-vermelha {
+    border: 0;
+    height: 3px;
+    background-color: #cc0000;
+    margin: 40px 0;
+}
+
+/* Data de Registro */
+.data-registro {
+    margin-top: 50px;
+    text-align: right;
+    font-size: 0.8em;
+    color: #555;
+    font-style: italic;
+}
+
+/* Estilos de link para que pareçam de documentos antigos */
+a {
+    color: #111;
+    text-decoration: underline dotted #111;
+}
+
+a:hover {
+    color: #cc0000;
+    text-decoration: underline solid #cc0000;
 }

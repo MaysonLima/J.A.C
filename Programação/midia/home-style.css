@@ -1,0 +1,249 @@
+/* --- Estilo Geral da Página Inicial --- */
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace; /* Fonte de terminal para um toque governamental */
+    background-color: #000; /* Fundo preto total */
+    color: #cc0000; /* Texto de alerta em vermelho escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Para evitar barras de rolagem desnecessárias */
+    position: relative;
+    text-shadow: 0 0 5px rgba(204, 0, 0, 0.5); /* Sombra sutil para "brilho" */
+}
+
+/* Efeito de ruído/estática de TV antiga */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEVHcEzMzMzLy8vGxsbDw8PExMTFxcXJycnKysrOzs7Pz8/Q0NDR0dHHy8vS0tLU1NTV1dXW1tbY2NjZ2dna2tre3tve3t7g4ODh4eHi4uL/S8/yAAAADXRSTlMAAQIDAwQFBgcICQoLI8xS/AAAAFxJREFUeNrtlEEOwCAQA7H1Q+7/p5rQkFESsUe3BQC4pS+l3gS8/9p3i/gEaP/2+4cSAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAk/4ApJ0wQ+4xQz1AAAAAElFTkSuQmCC') repeat;
+    opacity: 0.05; /* Ruído muito sutil */
+    pointer-events: none;
+    animation: static-noise 0.5s infinite steps(2); /* Animação para o ruído */
+}
+
+@keyframes static-noise {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+/* --- Container Principal de Login --- */
+.login-container {
+    background-color: rgba(10, 0, 0, 0.7); /* Fundo semi-transparente escuro */
+    border: 2px solid #cc0000; /* Borda de alerta */
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.8), inset 0 0 10px rgba(204, 0, 0, 0.5); /* Brilho neon vermelho */
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    animation: flicker 1.5s infinite alternate; /* Efeito de piscar sutil */
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.98; }
+    100% { opacity: 1; }
+}
+
+/* --- Banner de Cabeçalho --- */
+.header-banner {
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #cc0000;
+    padding-bottom: 20px;
+}
+
+.header-banner h1 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    color: #ff3333; /* Vermelho mais vibrante para o título principal */
+    letter-spacing: 2px;
+}
+
+/* Efeito Glitch para o WARNING */
+.glitch {
+    position: relative;
+}
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+}
+
+.glitch::before {
+    left: -2px;
+    text-shadow: 1px 0 #00ffff; /* Ciano */
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: 2px;
+    text-shadow: -1px 0 #ff00ff; /* Magenta */
+    animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(84% 0 11% 0); }
+    10% { clip-path: inset(22% 0 1% 0); }
+    20% { clip-path: inset(81% 0 14% 0); }
+    30% { clip-path: inset(99% 0 1% 0); }
+    40% { clip-path: inset(11% 0 71% 0); }
+    50% { clip-path: inset(87% 0 8% 0); }
+    60% { clip-path: inset(48% 0 35% 0); }
+    70% { clip-path: inset(34% 0 20% 0); }
+    80% { clip-path: inset(15% 0 10% 0); }
+    90% { clip-path: inset(99% 0 1% 0); }
+    100% { clip-path: inset(7% 0 87% 0); }
+}
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(62% 0 12% 0); }
+    15% { clip-path: inset(23% 0 32% 0); }
+    30% { clip-path: inset(45% 0 12% 0); }
+    45% { clip-path: inset(14% 0 71% 0); }
+    60% { clip-path: inset(68% 0 1% 0); }
+    75% { clip-path: inset(20% 0 6% 0); }
+    90% { clip-path: inset(22% 0 1% 0); }
+    100% { clip-path: inset(99% 0 1% 0); }
+}
+
+
+.header-banner p {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #ff9999; /* Vermelho mais claro para a descrição */
+}
+
+/* --- Caixa de Login/Status --- */
+.login-box {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px dashed #ff3333;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.status-message {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #ff6666; /* Vermelho de status */
+    animation: text-flicker 1s infinite alternate; /* Piscar do texto de status */
+}
+
+@keyframes text-flicker {
+    0% { opacity: 1; text-shadow: 0 0 5px #cc0000; }
+    50% { opacity: 0.9; text-shadow: 0 0 8px #cc0000; }
+    100% { opacity: 1; text-shadow: 0 0 5px #cc0000; }
+}
+
+/* Barra de Carregamento */
+.loading-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #330000; /* Fundo da barra escura */
+    border: 1px solid #ff3333;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    width: 0%;
+    background-color: #ff3333; /* Cor de progresso em vermelho */
+    transition: width 0.3s linear; /* Animação suave */
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.7); /* Brilho no progresso */
+}
+
+.final-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ff0000; /* Vermelho forte para mensagens finais */
+    font-weight: bold;
+    display: none; /* Escondido por padrão */
+    animation: final-flicker 0.8s infinite alternate;
+}
+
+#access-granted-message {
+    display: none; /* Escondido por padrão, aparece via JS */
+    color: #00ff00; /* Verde para sucesso */
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
+}
+
+@keyframes final-flicker {
+    0% { opacity: 1; text-shadow: 0 0 10px #ff0000; }
+    100% { opacity: 0.8; text-shadow: 0 0 15px #ff0000; }
+}
+
+
+/* --- Rodapé de Aviso --- */
+.footer-warning {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #cc0000;
+    text-shadow: none; /* Sem sombra para o rodapé */
+}
+
+.footer-warning p {
+    margin: 5px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- ESTILO DO BOTÃO DE ACESSO --- */
+
+.access-button {
+    background-color: #000;
+    color: #00ff00; /* Texto em verde neon para "Ação" */
+    border: 2px solid #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3em;
+    padding: 10px 25px;
+    margin-top: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Brilho neon verde */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    /* Efeito de piscar */
+    animation: button-flicker 1.5s infinite alternate; 
+}
+
+.access-button:hover {
+    background-color: #00ff00; /* Inverte as cores ao passar o mouse */
+    color: #000;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+@keyframes button-flicker {
+    0% { opacity: 1; box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); }
+    100% { opacity: 0.95; box-shadow: 0 0 20px rgba(0, 255, 0, 0.9); }
+}
+
+/* Ajuste na mensagem de acesso para incorporar o verde */
+#access-granted-message {
+    display: none; /* Escondido por padrão, aparece via JS */
+    color: #ff3333; /* Mantém o vermelho de alerta, mas usa o verde no texto de ação */
+    text-shadow: 0 0 8px rgba(255, 51, 51, 0.7);
+    font-weight: bold;
+}
+
+.access-text {
+    color: #00ff00; /* Destaca a violação em verde, como se fosse um log */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+.hidden {
+    display: none;
+}

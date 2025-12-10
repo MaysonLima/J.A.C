@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito - Fundação [CLASSIFICADO]</title>
+    <link rel="stylesheet" href="home-style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="header-banner">
+            <h1><span class="glitch" data-text="ATENÇÃO">ATENÇÃO</span>: Acesso Restrito</h1>
+            <p>Este sistema contém informações de segurança ultra-secreta. O acesso não autorizado é estritamente proibido.</p>
+        </div>
+
+        <div class="login-box">
+            <p class="status-message" id="status-attempt">Tentativa de Acesso Detectada A partir de... Bahia, Brasil.</p>
+            <p class="status-message" id="status-check">Verificando Credenciais de Segurança Nível 5...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            
+            <p class="final-message hidden" id="access-granted-message">
+                Acesso de Pessoal Nível-4. <span class="access-text">CONFIDENCIALIDADE: VIOLADA</span>
+            </p>
+            
+            <button id="enter-button" class="hidden access-button" onclick="window.location.href='entrada.html'">
+                ENTRAR NO ARQUIVO
+            </button>
+        </div>
+
+        <div class="footer-warning">
+            <p>Todos os direitos reservados. Fundação JAC. Julgar. Acusar. Conservar.</p>
+            <p>Intrusos serão localizados e neutralizados.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingProgress = document.querySelector('.loading-progress');
+            const statusAttempt = document.getElementById('status-attempt');
+            const statusCheck = document.getElementById('status-check');
+            const accessGrantedMessage = document.getElementById('access-granted-message');
+            const enterButton = document.getElementById('enter-button');
+            
+            // Esconde o status inicial para iniciar a animação
+            statusAttempt.style.display = 'block';
+            statusCheck.style.display = 'block';
+
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    
+                    // Fim do carregamento: esconde status e barra
+                    statusAttempt.style.display = 'none';
+                    statusCheck.style.display = 'none';
+                    document.querySelector('.loading-bar').style.display = 'none';
+
+                    // Mostra a mensagem de acesso concedido e o botão
+                    accessGrantedMessage.classList.remove('hidden');
+                    enterButton.classList.remove('hidden');
+
+                } else {
+                    width += 10;
+                    loadingProgress.style.width = width + '%';
+                }
+            }, 400); // Velocidade do carregamento
+        });
+    </script>
+
+</body>
+</html>

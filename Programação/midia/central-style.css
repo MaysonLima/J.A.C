@@ -1,0 +1,176 @@
+/* --- ESTILO GERAL E FONTES --- */
+body {
+    background-color: #0d0d0d; /* Fundo muito escuro */
+    color: #00ff00; /* Texto de terminal em verde neon */
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.4); /* Brilho neon sutil */
+}
+
+/* --- CABEÇALHO CENTRAL --- */
+.header-central {
+    background-color: #000;
+    border-bottom: 3px solid #cc0000; /* Linha de alerta vermelha */
+    padding: 15px 40px;
+}
+
+.header-central h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #ff3333; /* Título principal em vermelho de alto risco */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.data-acesso {
+    font-size: 0.8em;
+    color: #00ff00;
+    margin: 5px 0 0 0;
+}
+
+/* --- LAYOUT PRINCIPAL --- */
+.container-central {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+}
+
+/* --- SIDEBAR DE MENU E STATUS --- */
+.menu-alerta {
+    width: 250px;
+    flex-shrink: 0;
+    margin-right: 40px;
+    padding-right: 20px;
+    border-right: 1px dashed #333;
+}
+
+.menu-alerta h2 {
+    color: #ff3333;
+    text-transform: uppercase;
+    border-bottom: 1px dotted #ff3333;
+    padding-bottom: 5px;
+}
+
+.status-box {
+    background-color: #1a1a1a;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.status-box p {
+    margin: 5px 0;
+}
+
+.menu-alerta .nav-title {
+    color: #00ff00;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+nav a {
+    display: block;
+    color: #00ff00;
+    text-decoration: none;
+    padding: 5px 0;
+    border-left: 5px solid transparent;
+    transition: all 0.2s;
+}
+
+nav a:hover {
+    color: #fff;
+    border-left: 5px solid #ff3333;
+    background-color: #1a1a1a;
+    padding-left: 10px;
+}
+
+/* --- LISTA DE DOCUMENTOS PRINCIPAL --- */
+.lista-documentos {
+    flex-grow: 1;
+}
+
+.lista-documentos h2 {
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.lista-itens {
+    margin-top: 20px;
+}
+
+.arquivo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px dotted #333;
+    transition: background-color 0.2s;
+}
+
+.arquivo-item:hover {
+    background-color: #1a1a1a;
+}
+
+.arquivo-item a {
+    flex-grow: 1;
+    color: #00ffff; /* Ciano para links de arquivos */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+.arquivo-item a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.arquivo-item .classe {
+    flex-shrink: 0;
+    width: 150px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.arquivo-item .status {
+    flex-shrink: 0;
+    width: 200px;
+    text-align: right;
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* Cores de Classificação de Risco */
+.perigo-alto .classe {
+    color: #ff3333; /* Vermelho para KETER/EUCLID */
+    text-shadow: 0 0 5px rgba(255, 51, 51, 0.7);
+}
+
+.perigo-medio .classe {
+    color: #ffff00; /* Amarelo para EUCLID/SAFE */
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.7);
+}
+
+.perigo-baixo .classe {
+    color: #00ff00; /* Verde para SAFE/THAUMIEL */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+
+/* --- RODAPÉ CENTRAL --- */
+.footer-central {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #333;
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 40px;
+}
