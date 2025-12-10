@@ -26,7 +26,7 @@
                 Acesso de Pessoal Nível-4. <span class="access-text">CONFIDENCIALIDADE: VIOLADA</span>
             </p>
             
-            <button id="enter-button" class="hidden access-button" onclick="window.location.href='entrada.html'">
+            <button id="enter-button" class="hidden access-button" onclick="window.location.href='central.html'">
                 ENTRAR NO ARQUIVO
             </button>
         </div>
@@ -45,7 +45,6 @@
             const accessGrantedMessage = document.getElementById('access-granted-message');
             const enterButton = document.getElementById('enter-button');
             
-            // Esconde o status inicial para iniciar a animação
             statusAttempt.style.display = 'block';
             statusCheck.style.display = 'block';
 
@@ -67,9 +66,10 @@
                     width += 10;
                     loadingProgress.style.width = width + '%';
                 }
-            }, 400); // Velocidade do carregamento
+            }, 250); // Velocidade do carregamento
         });
     </script>
 
 </body>
 </html>
+

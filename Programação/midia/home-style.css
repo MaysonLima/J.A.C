@@ -1,19 +1,19 @@
-/* --- Estilo Geral da Página Inicial --- */
+
 body {
     margin: 0;
-    font-family: 'Courier New', Courier, monospace; /* Fonte de terminal para um toque governamental */
-    background-color: #000; /* Fundo preto total */
-    color: #cc0000; /* Texto de alerta em vermelho escuro */
+    font-family: 'Courier New', Courier, monospace; /* Fonte de terminal  */
+    background-color: #000; /* Fundo  */
+    color: #cc0000; /* Texto de alerta  */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* Para evitar barras de rolagem desnecessárias */
+    overflow: hidden; 
     position: relative;
-    text-shadow: 0 0 5px rgba(204, 0, 0, 0.5); /* Sombra sutil para "brilho" */
+    text-shadow: 0 0 5px rgba(204, 0, 0, 0.5); 
 }
 
-/* Efeito de ruído/estática de TV antiga */
+/* Efeito de ruído */
 body::before {
     content: '';
     position: absolute;
@@ -22,9 +22,9 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEVHcEzMzMzLy8vGxsbDw8PExMTFxcXJycnKysrOzs7Pz8/Q0NDR0dHHy8vS0tLU1NTV1dXW1tbY2NjZ2dna2tre3tve3t7g4ODh4eHi4uL/S8/yAAAADXRSTlMAAQIDAwQFBgcICQoLI8xS/AAAAFxJREFUeNrtlEEOwCAQA7H1Q+7/p5rQkFESsUe3BQC4pS+l3gS8/9p3i/gEaP/2+4cSAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAk/4ApJ0wQ+4xQz1AAAAAElFTkSuQmCC') repeat;
-    opacity: 0.05; /* Ruído muito sutil */
+    opacity: 0.05; /* Ruído */
     pointer-events: none;
-    animation: static-noise 0.5s infinite steps(2); /* Animação para o ruído */
+    animation: static-noise 0.5s infinite steps(2); /* Animação ruído */
 }
 
 @keyframes static-noise {
@@ -32,7 +32,7 @@ body::before {
     100% { background-position: 50px 50px; }
 }
 
-/* --- Container Principal de Login --- */
+/* --- ContainerLogin --- */
 .login-container {
     background-color: rgba(10, 0, 0, 0.7); /* Fundo semi-transparente escuro */
     border: 2px solid #cc0000; /* Borda de alerta */
@@ -41,7 +41,7 @@ body::before {
     text-align: center;
     max-width: 600px;
     width: 90%;
-    animation: flicker 1.5s infinite alternate; /* Efeito de piscar sutil */
+    animation: flicker 1.5s infinite alternate; /* Efeito de piscar  */
     position: relative;
     z-index: 10;
 }
@@ -67,7 +67,7 @@ body::before {
     letter-spacing: 2px;
 }
 
-/* Efeito Glitch para o WARNING */
+/* Efeito Glitch para o Atenção galera */
 .glitch {
     position: relative;
 }
@@ -122,7 +122,7 @@ body::before {
 .header-banner p {
     font-size: 1.1em;
     font-style: italic;
-    color: #ff9999; /* Vermelho mais claro para a descrição */
+    color: #ff9999; /* Vermelho descrição */
 }
 
 /* --- Caixa de Login/Status --- */
@@ -137,7 +137,7 @@ body::before {
     margin: 10px 0;
     font-size: 1.1em;
     color: #ff6666; /* Vermelho de status */
-    animation: text-flicker 1s infinite alternate; /* Piscar do texto de status */
+    animation: text-flicker 1s infinite alternate; /* Piscar texto status */
 }
 
 @keyframes text-flicker {
@@ -161,22 +161,22 @@ body::before {
     height: 100%;
     width: 0%;
     background-color: #ff3333; /* Cor de progresso em vermelho */
-    transition: width 0.3s linear; /* Animação suave */
-    box-shadow: 0 0 10px rgba(255, 51, 51, 0.7); /* Brilho no progresso */
+    transition: width 0.3s linear; 
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.7); 
 }
 
 .final-message {
     margin-top: 20px;
     font-size: 1.2em;
-    color: #ff0000; /* Vermelho forte para mensagens finais */
+    color: #ff0000; 
     font-weight: bold;
-    display: none; /* Escondido por padrão */
+    display: none; 
     animation: final-flicker 0.8s infinite alternate;
 }
 
 #access-granted-message {
-    display: none; /* Escondido por padrão, aparece via JS */
-    color: #00ff00; /* Verde para sucesso */
+    display: none; 
+    color: #00ff00; 
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
 }
 
@@ -191,7 +191,7 @@ body::before {
     margin-top: 30px;
     font-size: 0.9em;
     color: #cc0000;
-    text-shadow: none; /* Sem sombra para o rodapé */
+    text-shadow: none; 
 }
 
 .footer-warning p {
@@ -206,7 +206,7 @@ body::before {
 
 .access-button {
     background-color: #000;
-    color: #00ff00; /* Texto em verde neon para "Ação" */
+    color: #00ff00; 
     border: 2px solid #00ff00;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.3em;
@@ -221,7 +221,7 @@ body::before {
 }
 
 .access-button:hover {
-    background-color: #00ff00; /* Inverte as cores ao passar o mouse */
+    background-color: #00ff00; 
     color: #000;
     box-shadow: 0 0 20px #00ff00;
 }
@@ -231,16 +231,16 @@ body::before {
     100% { opacity: 0.95; box-shadow: 0 0 20px rgba(0, 255, 0, 0.9); }
 }
 
-/* Ajuste na mensagem de acesso para incorporar o verde */
+
 #access-granted-message {
-    display: none; /* Escondido por padrão, aparece via JS */
-    color: #ff3333; /* Mantém o vermelho de alerta, mas usa o verde no texto de ação */
+    display: none; 
+    color: #ff3333;
     text-shadow: 0 0 8px rgba(255, 51, 51, 0.7);
     font-weight: bold;
 }
 
 .access-text {
-    color: #00ff00; /* Destaca a violação em verde, como se fosse um log */
+    color: #00ff00; 
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
 }
 

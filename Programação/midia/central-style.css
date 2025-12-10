@@ -1,7 +1,7 @@
-/* --- ESTILO GERAL E FONTES --- */
+
 body {
-    background-color: #0d0d0d; /* Fundo muito escuro */
-    color: #00ff00; /* Texto de terminal em verde neon */
+    background-color: #0d0d0d; 
+    color: #00ff00; 
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
     margin: 0;
@@ -19,7 +19,7 @@ body {
 .header-central h1 {
     margin: 0;
     font-size: 1.8em;
-    color: #ff3333; /* Título principal em vermelho de alto risco */
+    color: #ff3333; /* Título principal em vermelho */
     text-transform: uppercase;
     letter-spacing: 2px;
 }

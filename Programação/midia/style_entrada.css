@@ -1,4 +1,4 @@
-/* --- ESTILO GERAL E FONTES --- */
+
 body {
     /* Cor de fundo ligeiramente bege para simular papel antigo/tela terminal */
     background-color: #f7f3e8;
@@ -62,11 +62,11 @@ body {
 .documento-scp {
     flex-grow: 1;
     padding: 20px 40px;
-    /* Borda sutil para dar a sensação de um bloco de texto */
+    /* Borda bloco de texto */
     border-left: 1px dashed #999; 
 }
 
-/* Título de Classificação do Objeto */
+/* Título de Classificação */
 .classificacao-cabecalho {
     background-color: #111;
     color: #fff;
@@ -98,14 +98,14 @@ body {
     margin-top: 30px;
 }
 
-/* Bloco de Código/Procedimentos (simulando terminal/datilografia) */
+/* Bloco de Código/Procedimentos  */
 pre {
     background-color: #eee;
     padding: 15px;
     border: 1px solid #ccc;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.9em;
-    white-space: pre-wrap; /* Garante que o texto quebre a linha */
+    white-space: pre-wrap; /* Gtexto quebra */
 }
 
 /* Linha Divisória Vermelha */
@@ -125,7 +125,7 @@ pre {
     font-style: italic;
 }
 
-/* Estilos de link para que pareçam de documentos antigos */
+/* Estilos de link */
 a {
     color: #111;
     text-decoration: underline dotted #111;
